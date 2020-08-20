@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        /* overflow : hidden; */ /* scroll 안되게 하고싶을때 */
+      }
+      .rec {
+        width: 100px;
+        height: 100px;
+        background-color: antiquewhite;
+        margin-bottom: 4px;
+        border-radius: 4px;
+      }
+      .pink {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <div class="rec pink"></div>
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <script>
+      let pink = document.querySelector('.pink');
+      pink.addEventListener('click', e => {
+        getXY(e);
+      });
+
+      function getXY(e) {
+        domRect = pink.getBoundingClientRect();
+        console.log(domRect);
+        console.log('client : ' + e.clientX + ', ' + e.clientX);
+        console.log('page : ' + e.pageX + ', ' + e.pageY);
+        /*
+        console.log(`client: ${event.clientX}, ${event.clientY}`);
+        console.log(`page: ${event.pageX}, ${event.pageY}`);
+        */
+      }
+    </script>
+  </body>
+</html>
