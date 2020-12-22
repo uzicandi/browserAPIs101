@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="test.js" defer></script>
+    <!-- defer를 사용하면 처음부터 쭉 읽은 다음 DOMLoaded전에 호출 -->
+  </head>
+  <body>
+    <script>
+      // html을 읽어서 DOM 요소를 파악하면 script를 파악함
+      window.addEventListener('DOMContentLoaded', () => {
+        // html만 읽으면 이것이 호출됨 (only document)
+        console.log('DOMContentLoaded');
+      });
+
+      window.addEventListener('load', () => {
+        // 리소스, 즉 페이지 안에서 쓰여지고 있는 폰트나 이미지 같은 것들이 (css, images) 다운로드가 완료되면 호출
+        console.log('load');
+      });
+
+      window.addEventListener('beforeunload', () => {
+        // 사용자가 페이지를 나가기 전에 불려지는 함수
+        console.log('beforeunload');
+      });
+
+      window.addEventListener('unload', () => {
+        // resource is being unloaded
+        console.log('unload');
+      });
+    </script>
+  </body>
+</html>

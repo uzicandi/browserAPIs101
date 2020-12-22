@@ -20,6 +20,11 @@
       .pink {
         background-color: pink;
       }
+      aside {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+      }
     </style>
   </head>
   <body>
@@ -36,7 +41,31 @@
     <div class="rec"></div>
     <div class="rec"></div>
     <div class="rec"></div>
+    <aside>
+      <button class="scroll-by">Scroll by 100px(y)</button>
+      <button class="scroll-to">
+        Scroll to 100px(y)
+      </button>
+      <button class="scroll-into">
+        Scroll into special
+      </button>
+    </aside>
     <script>
+      const scrollBy = document.querySelector('.scroll-by');
+      scrollBy.addEventListener('click', () => {
+        window.scrollBy({ top: 100, left: 0, behavior: 'smooth' });
+      });
+
+      const scrollTo = document.querySelector('.scroll-to');
+      scrollTo.addEventListener('click', () => {
+        window.scrollTo(0, 100);
+      });
+
+      const scrollInto = document.querySelector('.scroll-into');
+      scrollInto.addEventListener('click', () => {
+        pink.scrollIntoView();
+      });
+
       let pink = document.querySelector('.pink');
       pink.addEventListener('click', e => {
         getXY(e);
@@ -47,10 +76,6 @@
         console.log(domRect);
         console.log('client : ' + e.clientX + ', ' + e.clientX);
         console.log('page : ' + e.pageX + ', ' + e.pageY);
-        /*
-        console.log(`client: ${event.clientX}, ${event.clientY}`);
-        console.log(`page: ${event.pageX}, ${event.pageY}`);
-        */
       }
     </script>
   </body>
