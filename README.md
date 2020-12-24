@@ -1,7 +1,7 @@
 ### chap01
 
 - window object에는 어떤 기능이 있는지
-- `window.screen.width`, `window.outerWidth`, `documentElement.clientWidth` 등 
+- `window.screen.width`, `window.outerWidth`, `documentElement.clientWidth` 등
 
 ### chap02
 
@@ -16,4 +16,10 @@
 ### chap04
 
 - 마우스 포인트에 따라 좌표가 따라다니는 프로그램
-- `mousemove`, 및 원하는 모양 및  css, javascript로 만들기
+- `mousemove`, 및 원하는 모양 및 css, javascript로 만들기
+
+### chap 05
+
+- 버튼으로 토끼 찾기
+- `scrollIntoView` 의 `behavior`, `block` 속성 사용
+- items 중앙 세로 정렬 css flex 다시 한번 익힘
