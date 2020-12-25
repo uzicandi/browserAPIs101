@@ -44,3 +44,7 @@
 - `EdgeHTML` : IEdge
 
 -> 그래서 움직일 때, top, left 사용하면 X, translate 사용하는게 좋음
+
+### chap06
+
+- chap04의 성능개선
