@@ -45,6 +45,11 @@
 
 -> 그래서 움직일 때, top, left 사용하면 X, translate 사용하는게 좋음
 
-### chap06
+### chap06 웹의 성능개선
 
 - chap04의 성능개선
+- 성능개선 증거 : 개발자도구 - Performance : 모든 이벤트들
+- 발생하는 중간중간 screenshot 해서 확인할 수 있음
+- `record` -> 동작 시작 -> `stop` 해서 프로파일링 -> 빨간색 : 경고
+- `command + shift + p` : 개발툴 팔레트 => `Show layout shift regions` => 레이아웃이 어떻게 발생하고 있는지 나옴 (레이아웃이 발생하지 않아야 좋은 것)
+- 사용자의 인터랙션이 발생하는 경우에 더 신경써야 함
