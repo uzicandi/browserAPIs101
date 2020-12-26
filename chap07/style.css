@@ -44,10 +44,13 @@ body {
   border: none;
   cursor: pointer;
 }
-.list_item {
+.item_container {
   width: 400px;
   height: 440px;
   background-color: wheat;
+}
+.item_list {
+  margin: 0;
 }
 
 .input_item {
