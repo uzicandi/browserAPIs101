@@ -1,0 +1,56 @@
+body {
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.listPage {
+  background-color: cornflowerblue;
+  width: 400px;
+  height: 600px;
+  border-radius: 20px;
+}
+.header {
+  background-color: coral;
+  width: 400px;
+  height: 60px;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header p {
+  margin: 0;
+  color: white;
+  font-size: 25px;
+}
+.footer {
+  background-color: coral;
+  width: 400px;
+  height: 70px;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.plus_item {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.list_item {
+  width: 400px;
+  height: 440px;
+  background-color: wheat;
+}
+
+.input_item {
+  width: 392px;
+  height: 30px;
+}
