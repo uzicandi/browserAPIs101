@@ -53,3 +53,55 @@
 - `record` -> 동작 시작 -> `stop` 해서 프로파일링 -> 빨간색 : 경고
 - `command + shift + p` : 개발툴 팔레트 => `Show layout shift regions` => 레이아웃이 어떻게 발생하고 있는지 나옴 (레이아웃이 발생하지 않아야 좋은 것)
 - 사용자의 인터랙션이 발생하는 경우에 더 신경써야 함
+
+### chap 07
+
+```
+FontAwesome
+
+https://fontawesome.com/
+
+https://www.youtube.com/watch?v=X91jsJyZofw&feature=youtu.be&t=340
+
+CSS Gradient
+
+https://cssgradient.io/
+
+Box Shadow CSS Generator
+
+https://www.cssmatic.com/box-shadow
+
+
+```
+
+### chap 08 Event 개념
+
+- keyboard
+- resizing window
+- close window
+- page loading
+- form submission
+- video is being played
+- error
+
+```
+Events 개념
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+
+Events 종류
+
+https://developer.mozilla.org/en-US/docs/Web/Events
+```
+
+- 인공적으로 클릭이벤트 전송
+
+```
+$0.dispatchEvent(new Event('click'));
+```
+
+- 이벤트 리스너 지우기
+
+```
+$0.removeEventListener('click', listener);
+```
