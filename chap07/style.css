@@ -51,9 +51,24 @@ body {
 }
 .item-list {
   margin: 0;
+  padding: 20px 40px 20px 40px;
 }
 
 .input-item {
   width: 392px;
   height: 30px;
+}
+
+.each-item {
+  list-style: none;
+  margin: 10px 0 10px 0;
+}
+
+.each-item span {
+  display: inline-block;
+  width: 280px;
+}
+
+.each-item button {
+  margin: 0 5px 0 5px;
 }

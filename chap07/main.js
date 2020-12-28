@@ -1,13 +1,18 @@
+// selectors
 const itemList = document.querySelector('.item-list');
+const inputItem = document.querySelector('.input-item');
 const plusItem = document.querySelector('.plus-item');
+const form = document.querySelector('#form');
 
-// plus_item.addEventListener('click', () => {
-//   item_list.appendChild(li);
-// });
+// event listeners (enter, button 동시에 )
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  handleSubmit(e);
+});
 
 let items = [];
 
-function paintItem() {
+function paintItem(text) {
   const li = document.createElement('li');
   const delBtn = document.createElement('button');
   const span = document.createElement('span');
@@ -16,9 +21,10 @@ function paintItem() {
   delBtn.innerText = 'X';
   delBtn.addEventListener('click', deleteItem);
   span.innerText = text;
-  li.appendChild(delBtn);
   li.appendChild(span);
+  li.appendChild(delBtn);
   li.id = newId;
+  li.className = 'each-item';
 
   itemList.appendChild(li);
   const itemObj = {
@@ -30,4 +36,12 @@ function paintItem() {
 
 function handleSubmit(e) {
   e.preventDefault();
+  const currentValue = inputItem.value;
+  paintItem(currentValue);
+  inputItem.value = '';
+}
+
+function deleteItem(e) {
+  const deleteItem = e.target.parentElement;
+  deleteItem.remove();
 }
