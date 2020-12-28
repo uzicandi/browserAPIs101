@@ -5,21 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <script src="main.js" defer></script>
+    <script src="main2.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/c609aedd06.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="listPage">
-      <div class="header"><p>Shopping List</p></div>
-      <div class="item-container">
-        <ul class="item-list"></ul>
-      </div>
-      <form id="form">
+    <section class="listPage">
+      <header class="header"><p>Shopping List</p></header>
+      <ul class="item-list">
+        <!-- <li class="item__row">
+          <div class="item">
+            <span class="item__name">Egg</span>
+            <button class="item__delete">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+          <div class="item__divider"></div>
+        </li> -->
+      </ul>
+      <!-- <form id="form"> -->
+      <footer class="footer">
         <input type="text" placeholder="Enter item" class="input-item" />
-        <div class="footer">
-          <button type="submit" class="plus-item">+</button>
-        </div>
-      </form>
-    </div>
+        <button type="submit" class="plus-item">
+          <i class="fas fa-plus"></i>
+        </button>
+      </footer>
+      <!-- </form> -->
+    </section>
   </body>
 </html>
