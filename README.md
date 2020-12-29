@@ -112,7 +112,7 @@ $0.removeEventListener('click', listener);
 
 ##### 브라우저의 기본기능을 취소
 
-- `event-delegation.html` : `preventDefault`
+- `event-prevent.html` : `preventDefault`
 
 - 스크롤 이벤트가 발생하면 페이지가 위/아래로 움직이는
 - 체크 박스를 클릭하면 체크박스가 선택/비선택 되는
@@ -124,5 +124,5 @@ $0.removeEventListener('click', listener);
 
 ##### 이벤트 위임
 
-- `event-delegation`
+- `event-delegation.html`
 - 반복될 때는 각 node에 이벤트 위임 보다 `부모 node` 에 이벤트 위임하자
