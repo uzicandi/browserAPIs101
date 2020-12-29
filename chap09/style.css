@@ -1,0 +1,90 @@
+/* html,
+body {
+  height: 100%;
+} */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* location of the image */
+  background-image: url(img/background.png);
+  /* Background Img is centered vertically and horizontally at all times */
+  background-position: center center;
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  /* Background image is fixed in the viewport so that it doesn't move
+  when the content's height is greater than the image's height */
+  background-attachment: fixed;
+  /* Responsive image */
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.availSpace {
+  position: absolute;
+  top: 50%;
+  bottom: 20px;
+  height: 45%;
+  width: 95%;
+  margin: 0px;
+  background-color: thistle;
+}
+.ctrlSpace {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ctrlSpace button,
+.ctrlSpace li {
+  margin: 10px 0 0 0;
+  list-style: none;
+}
+
+.signBtn,
+.remainTime,
+.remainCarrot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signBtn {
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+  cursor: pointer;
+  border-width: 5px;
+  background-color: wheat;
+}
+.signBtn i {
+  font-size: 40px;
+}
+.remainTime {
+  width: 250px;
+  height: 75px;
+  background-color: white;
+  margin: 0;
+  border-radius: 15%;
+  border: 5px solid;
+}
+.remainTime span {
+  color: black;
+  font-size: 52px;
+}
+.remainCarrot {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: salmon;
+  border: 5px solid;
+}
+.remainCarrot span {
+  color: white;
+  font-size: 64px;
+}
