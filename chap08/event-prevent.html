@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 250px;
+        height: 250px;
+        background-color: yellow;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="checkbox" />
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+      document.addEventListener('wheel', event => {
+        console.log('scrolling');
+        event.preventDefault();
+      });
+      const checkbox = document.querySelector('input');
+      checkbox.addEventListener('click', event => {
+        // long
+        console.log('checked');
+        event.preventDefault(); // 브라우저의 행동 무시
+      });
+    </script>
+  </body>
+</html>

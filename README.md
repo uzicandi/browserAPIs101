@@ -105,3 +105,24 @@ $0.dispatchEvent(new Event('click'));
 ```
 $0.removeEventListener('click', listener);
 ```
+
+##### Capturing & Bubbling
+
+- `event-capture.html`
+
+##### 브라우저의 기본기능을 취소
+
+- `event-delegation.html` : `preventDefault`
+
+- 스크롤 이벤트가 발생하면 페이지가 위/아래로 움직이는
+- 체크 박스를 클릭하면 체크박스가 선택/비선택 되는
+- 버튼을 누르면 눌러지는 효과가 나오는
+- 링크를 클릭하면 링크가 열리는
+  등의 이벤트가 발생했을 때, 위와 같은 기능을 원하지 않을 때 사용.
+
+- 대부분의 이벤트가 능동(active)이고 scroll은 대표적인 수동(passive)
+
+##### 이벤트 위임
+
+- `event-delegation`
+- 반복될 때는 각 node에 이벤트 위임 보다 `부모 node` 에 이벤트 위임하자
