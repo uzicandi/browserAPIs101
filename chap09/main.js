@@ -3,6 +3,13 @@ let timeLeft = 10;
 let timerId;
 const remainTime = document.querySelector('.remainTime');
 const container = document.querySelector('.availSpace');
+const remainCarrot = document.querySelector('.remainCarrot');
+// music
+const alertBg = new Audio('/chap09/sound/alert.wav');
+const bgMusic = new Audio('/chap09/sound/bg.mp3');
+const bugPull = new Audio('/chap09/sound/bug_pull.mp3');
+const carrotPull = new Audio('/chap09/sound/carrot_pull.mp3');
+const gameWin = new Audio('/chap09/sound/game_win.mp3');
 
 signBtn.addEventListener('click', event => {
   onClick(event);
@@ -12,29 +19,37 @@ function onClick(event) {
   const id = event.target.dataset.id;
   const i = document.querySelector('i');
   i.remove();
-  if (id == 'play') {
+  if (id == 'play' || id == 'replay') {
+    // sound
+    bgMusic.play();
+    //countdown
     timerId = setInterval(function() {
       countdown();
     }, 1000);
     for (let i = 0; i < 10; i++) {
-      randomImages();
+      randomCarrots();
+      randomBugs();
     }
     signBtn.innerHTML = `<i class="fas fa-stop" data-id="stop"/>`;
     signBtn.setAttribute('data-id', 'stop');
   } else {
+    // soundoff
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
+    // timeout
     clearTimeout(timerId);
     remainTime.innerHTML = `<span>00:00</span>`;
     timeLeft = 10;
     signBtn.innerHTML = `<i class="fas fa-play" data-id="play"/>`;
     signBtn.setAttribute('data-id', 'play');
     container.innerHTML = '';
+    remainCarrot.innerHTML = '<span>10</span>';
   }
 }
 
 function countdown() {
   if (timeLeft == -1) {
     clearTimeout(timerId);
-    //doneAlert();
   } else {
     if (timeLeft == 10) {
       remainTime.innerHTML = `<span>00:${timeLeft}</span>`;
@@ -45,19 +60,70 @@ function countdown() {
   }
 }
 
-function randomImages() {
-  const img = document.createElement('img');
+function randomCarrots() {
+  const carrot = document.createElement('img');
 
   const availW = container.offsetWidth - 60;
   const availH = container.offsetHeight - 60;
-  img.src = '/chap09/img/carrot.png';
+  carrot.src = '/chap09/img/carrot.png';
+  carrot.setAttribute('class', 'carrot');
+  carrot.setAttribute('data-id', `carrot`);
 
   let randomY = Math.round(Math.random() * availH) + 'px';
   let randomX = Math.round(Math.random() * availW) + 'px';
-  img.style.left = randomX;
-  img.style.top = randomY;
+  carrot.style.left = randomX;
+  carrot.style.top = randomY;
 
-  container.appendChild(img);
+  container.appendChild(carrot);
+}
+function randomBugs() {
+  const bug = document.createElement('img');
+
+  const availW = container.offsetWidth - 60;
+  const availH = container.offsetHeight - 60;
+  bug.src = '/chap09/img/bug.png';
+  bug.setAttribute('data-id', `bug`);
+
+  let randomY = Math.round(Math.random() * availH) + 'px';
+  let randomX = Math.round(Math.random() * availW) + 'px';
+  bug.style.left = randomX;
+  bug.style.top = randomY;
+
+  container.appendChild(bug);
 }
 
-window.addEventListener('load', () => {});
+container.addEventListener('click', event => {
+  const id = event.target.dataset.id;
+  if (id == 'carrot') {
+    event.target.remove();
+    //sound
+    //남은 carrot 개수 보여주기
+    const carrots = document.querySelectorAll('.carrot');
+    remainCarrot.innerHTML = `<span>${carrots.length}</span>`;
+    if (carrots.length == 0) {
+      //sound
+      console.log('done!');
+    }
+  } else if (id == 'bug') {
+    console.log('X');
+    //sound
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
+    alertBg.play();
+    //signBtn.outerHTML = '';
+    //you lost 창 나옴
+    container.innerHTML = `
+    <div class="loseSpace">
+      <button class="replayBtn" data-id="replay">
+      <i class="fas fa-redo-alt" data-id="replay"></i>
+      </button>
+      <span>YOU LOSE💩</span>
+    </div>`;
+    const replayBtn = document.querySelector('.replayBtn');
+
+    replayBtn.addEventListener('click', event => {
+      container.innerHTML = '';
+      onClick(event);
+    });
+  }
+});
