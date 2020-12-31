@@ -33,23 +33,28 @@ function onClick(event) {
     signBtn.innerHTML = `<i class="fas fa-stop" data-id="stop"/>`;
     signBtn.setAttribute('data-id', 'stop');
   } else {
-    // soundoff
-    bgMusic.pause();
-    bgMusic.currentTime = 0;
-    // timeout
-    clearTimeout(timerId);
-    remainTime.innerHTML = `<span>00:00</span>`;
-    timeLeft = 10;
-    signBtn.innerHTML = `<i class="fas fa-play" data-id="play"/>`;
-    signBtn.setAttribute('data-id', 'play');
-    container.innerHTML = '';
-    remainCarrot.innerHTML = '<span>10</span>';
+    gameover();
   }
+}
+function gameover() {
+  bgMusic.pause();
+  bgMusic.currentTime = 0;
+  clearTimeout(timerId);
+  remainTime.innerHTML = `<span>00:00</span>`;
+  signBtn.innerHTML = `<i class="fas fa-play" data-id="play"/>`;
+  signBtn.setAttribute('data-id', 'play');
+  container.innerHTML = '';
+  remainCarrot.innerHTML = '<span>10</span>';
+  timeLeft = 10;
 }
 
 function countdown() {
   if (timeLeft == -1) {
-    clearTimeout(timerId);
+    gameover();
+    const carrots = document.querySelectorAll('.carrot');
+    if (carrots.length > 0) {
+      loseContent();
+    }
   } else {
     if (timeLeft == 10) {
       remainTime.innerHTML = `<span>00:${timeLeft}</span>`;
@@ -97,33 +102,35 @@ container.addEventListener('click', event => {
   if (id == 'carrot') {
     event.target.remove();
     //sound
+    carrotPull.play();
     //남은 carrot 개수 보여주기
     const carrots = document.querySelectorAll('.carrot');
     remainCarrot.innerHTML = `<span>${carrots.length}</span>`;
-    if (carrots.length == 0) {
+    if (carrots.length == 0 && timeLeft >= 0) {
       //sound
-      console.log('done!');
+      bgMusic.pause();
+      bgMusic.currentTime = 0;
+      gameWin.play();
     }
   } else if (id == 'bug') {
-    console.log('X');
-    //sound
-    bgMusic.pause();
-    bgMusic.currentTime = 0;
-    alertBg.play();
-    //signBtn.outerHTML = '';
-    //you lost 창 나옴
-    container.innerHTML = `
+    gameover();
+    bugPull.play();
+    loseContent();
+  }
+});
+
+function loseContent() {
+  container.innerHTML = `
     <div class="loseSpace">
       <button class="replayBtn" data-id="replay">
       <i class="fas fa-redo-alt" data-id="replay"></i>
       </button>
       <span>YOU LOSE💩</span>
     </div>`;
-    const replayBtn = document.querySelector('.replayBtn');
+  const replayBtn = document.querySelector('.replayBtn');
 
-    replayBtn.addEventListener('click', event => {
-      container.innerHTML = '';
-      onClick(event);
-    });
-  }
-});
+  replayBtn.addEventListener('click', event => {
+    container.innerHTML = '';
+    onClick(event);
+  });
+}
