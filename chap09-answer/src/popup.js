@@ -1,5 +1,3 @@
-'use strict';
-
 export default class PopUp {
   constructor() {
     //필요한 것 초기화
