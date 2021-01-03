@@ -126,3 +126,15 @@ $0.removeEventListener('click', listener);
 
 - `event-delegation.html`
 - 반복될 때는 각 node에 이벤트 위임 보다 `부모 node` 에 이벤트 위임하자
+
+### chap09
+
+- 게임 기능 구현
+- 반응형 구현
+
+### chap09-answer
+
+- chap09의 코드 리팩토링
+- game, field, popup, sound 모듈화
+- Bulid Pattern
+- 오타 방지 타입보장 변수 생성
