@@ -1,7 +1,12 @@
 'use strict';
 const CARROT_SIZE = 80;
 
-export default class Field {
+export const ItemType = Object.freeze({
+  carrot: 'carrot',
+  bug: 'bug'
+});
+
+export class Field {
   constructor(carrotCount, bugCount) {
     this.carrotCount = carrotCount;
     this.bugCount = bugCount;
@@ -50,13 +55,14 @@ export default class Field {
       this.field.appendChild(item);
     }
   }
+  // field와 game간 문자열 주고받는거 고치기
   onClick(event) {
     const target = event.target;
     if (target.matches('.carrot')) {
       target.remove();
-      this.onItemClick && this.onItemClick('carrot');
+      this.onItemClick && this.onItemClick(ItemType.carrot);
     } else if (target.matches('.bug')) {
-      this.onItemClick && this.onItemClick('bug');
+      this.onItemClick && this.onItemClick(ItemType.bug);
     }
   }
 }
