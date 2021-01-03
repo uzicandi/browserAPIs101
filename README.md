@@ -138,3 +138,13 @@ $0.removeEventListener('click', listener);
 - game, field, popup, sound 모듈화
 - Bulid Pattern
 - 오타 방지 타입보장 변수 생성
+
+### chap10 Event Loop
+
+브라우저 위에서 동작하는 웹 어플리케이션을 만드는 개발자라면 꼭 알아야하는!
+
+- 프로세스와 쓰레드의 차이점
+- JS = Single Threded? Multi Threded?
+- JS가 브라우저 위에서 어떻게 동작하는지
+- 사용자 눈에 스무스하게 보이기 (60fps(16.7ms))
+- Task Queue? Microtask Queue?
