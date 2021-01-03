@@ -12,19 +12,17 @@ game.setGameStopListener(reason => {
   switch (reason) {
     case 'cancel':
       message = 'Replay?';
-      gameFinishBanner.showWithText(message);
       break;
     case 'win':
       message = 'YOU WON';
-      gameFinishBanner.showWithText(message);
       break;
     case 'lose':
       message = 'YOU LOST';
-      gameFinishBanner.showWithText(message);
       break;
     default:
       throw new Error('not valid reason');
   }
+  gameFinishBanner.showWithText(message);
 });
 
 gameFinishBanner.setClickListener(() => {
