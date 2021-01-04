@@ -26,3 +26,13 @@ Loop는 Call Stack이 비워질 때 까지 기다렸다가, Task Queue에 있는
 ➡️ timeout callback 실행
 ```
 
+## Task Queue
+
+WebAPIs에서 우리가 등록한 콜백 함수를 특정한 이벤트가 발생했을 때 Task Queue에 넣는다. 
+
+## Microtask Queue
+
+- __Promise then__  
+- __mutation obeserver__  
+
+## Render Sequence
