@@ -41,7 +41,7 @@ WebAPIs에서 우리가 등록한 콜백 함수를 특정한 이벤트가 발생
 ## Render Sequence
 
 우리가 요소를 움직이거나 애니메이션을 할 때 주기적으로 브라우저 화면에 업데이트 해주는 순서.   
-DOM요소가 브라우저에 표기되기 위해서는 __Render Tree, Layout, Paint, Composite__ 과정 필요. 
+DOM요소가 브라우저에 표기되기 위해서는 __Render Tree, Layout, Paint, Composite__ 과정 필요.  
 그 전에, WebAPIs 중 하나인 __Request Animation Frame__ 이 있음.  
 이 API를 통해서 __콜백__ 을 등록해 놓으면 __다음에 브라우저가 업데이트 되기 전에 내 콜백을 실행해줘!__ 라는 뜻.  
 이 때 우리가 호출하는 콜백은 __RAF Queue__ 에 차곡차곡 쌓임  
