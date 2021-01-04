@@ -25,3 +25,4 @@ Loop가 계속 돌면서 콜스택과 태스크 큐를 관찰한다.
 Loop는 Call Stack이 비워질 때 까지 기다렸다가, Task Queue에 있는 것을 Call Stack으로 데리고 온다.  
 ➡️ timeout callback 실행
 ```
+
