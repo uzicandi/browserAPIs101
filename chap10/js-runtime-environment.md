@@ -14,7 +14,9 @@ JavaScript = Single Threaded Language
 # JavaScript Engine
 
 JavaScript Engine은 `Memory Heap`과 `Call Stack`등이 있다.  
-프로세스 안에 힙과 스택이 있듯 자바스크립트 엔진에도 메모리힙과 콜스택 등이 있다.
+프로세스 안에 힙과 스택이 있듯 자바스크립트 엔진에도 메모리힙과 콜스택 등이 있다.  
+
+
 ✅ **Memory Heap**
 
 - 우리가 데이터를 만들 때, 즉 **변수를 선언해서 오브젝트, 문자열, 숫자를 할당** 하게 되면 그 데이터를을 전부 다 **메모리 힙에 저장** 이 된다.
