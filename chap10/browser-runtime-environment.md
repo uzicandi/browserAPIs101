@@ -48,7 +48,8 @@ DOM요소가 브라우저에 표기되기 위해서는 __Render Tree, Layout, Pa
 
 ## 브라우저는 어떻게 이렇게 많은 것들을 처리할 수 있을까 ?
 
-1. __Event Loop는 계속 돌다가 Call Stack에 들어있는 함수가 끝날 때 까지 기다리고 있는다.__
+1. __Event Loop는 계속 돌다가 Call Stack에 들어있는 함수가 끝날 때 까지 기다리고 있는다.__  
+
 그래서 Call Stack에서 시간 오래걸리는 걸 하면 다른 행동이 되지 않음  
 
 🍒 Event Loop는 Render 쪽으로 갈수도, 안갈수도 있다. 
@@ -63,7 +64,8 @@ Render Tree는 60fps만 지켜서 업데이트 하면 된다.
 Microtask Queue는 큐 안에 들어있는 아이템이 없을 때 까지 기다렸다가  
 하나씩 __Call Stack__ 으로 가지고 간다.  
 - Promise.then이 끝나면, mutation observer 콜백을 __call stack__ 에 넣음  
-✅ Point ! 
+
+✅  Point ! 
 ```
 Event Loop이 Microtask Queue에 머무르는 동안 Microtask Queue에 또 다른 콜백이 들어온다면 
 나중에 들어온 콜백도 전부 다 끝날 때 까지 계속 Call stack으로 가지고 와서 수행한다. 
