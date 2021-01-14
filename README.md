@@ -14,8 +14,8 @@ React 등의 JS 라이브러리의 동작 원리를 이해할 수 있는 기회�
 - [x] Javascript
 
 ## 소스코드 
-[리팩토링 전 코드](https://github.com/uzicandi/browserAPIs101/tree/master/chap09)
-[리팩토링 후 코드](https://github.com/uzicandi/browserAPIs101/tree/master/chap09-answer)
+- [리팩토링 전 코드](https://github.com/uzicandi/browserAPIs101/tree/master/chap09)
+- [리팩토링 후 코드](https://github.com/uzicandi/browserAPIs101/tree/master/chap09-answer)
 
 
 ## Game Mission  
