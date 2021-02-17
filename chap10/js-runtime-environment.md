@@ -14,7 +14,9 @@ JavaScript = Single Threaded Language
 # JavaScript Engine
 
 JavaScript Engine은 `Memory Heap`과 `Call Stack`등이 있다.  
-프로세스 안에 힙과 스택이 있듯 자바스크립트 엔진에도 메모리힙과 콜스택 등이 있다.
+프로세스 안에 힙과 스택이 있듯 자바스크립트 엔진에도 메모리힙과 콜스택 등이 있다.  
+
+
 ✅ **Memory Heap**
 
 - 우리가 데이터를 만들 때, 즉 **변수를 선언해서 오브젝트, 문자열, 숫자를 할당** 하게 되면 그 데이터를을 전부 다 **메모리 힙에 저장** 이 된다.
@@ -24,8 +26,8 @@ JavaScript Engine은 `Memory Heap`과 `Call Stack`등이 있다.
 
 - 우리가 함수를 실행하는 순서에 따라 차곡차곡 쌓아 놓음
 - **LIFO(Last In First Out)**, 보통 스택에는 `push`, `pop`, `peek`같은 API들이 있다.
-- 함수들이 호출되는 순서를 기억했다가, 함수가 끝나면 원래 있던 자리로 돌아가기 위해 쓰이는 자료구조 중 하나.
-- 각 프로세스와 쓰레드에는 저마다의 콜스택이 들어가 있다.
+- 함수들이 호출하는 순서를 기억했다가, 함수가 끝나면 원래 있던 자리로 돌아가기 위해 쓰이는 자료구조 중 하나.
+- 각 프로세스와 쓰레드에는 저마다의 콜스택이 들어가 있다. __일을 수행할 때 어디서 왔고, 어디로 다시 가야하는지 정보를 기억해야 되기 때문__ 
 
 ```
 function second() {
@@ -42,14 +44,13 @@ function main() {
 }
 main();
 ```
+- __Maximum call stack size exceeded__ : 프로세스, 쓰레드마다 지정된 콜스택 사이가 있다. 
+- 아래처럼 함수안에서 자기 자신을 계속 부르는 것을 __재귀함수__ 라고 함 : 유용하지만 콜스택사이즈 신경써야 함
+```
+function endless() {
+    endless();
+}
+endless();
+```
 
-# JavaScript Runtime Environment
 
-###Web APIs와 JS Engine은 어떻게 함께 수행될까 ❓
-콜백함수는 어떻게 실행될까?
-
-### Task Queue
-
-### Microtask Queue
-
-### Render
